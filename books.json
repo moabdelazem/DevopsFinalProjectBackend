@@ -1,0 +1,206 @@
+[
+    {
+        "id": 3,
+        "title": "1984",
+        "author": "George Orwell",
+        "year": 1949,
+        "genre": "Dystopian",
+        "isBorrowed": false
+    },
+    {
+        "id": 5,
+        "title": "The Great Gatsby",
+        "author": "F. Scott Fitzgerald",
+        "year": 1925,
+        "genre": "Fiction",
+        "isBorrowed": false
+    },
+    {
+        "id": 6,
+        "title": "Moby Dick",
+        "author": "Herman Melville",
+        "year": 1851,
+        "genre": "Adventure",
+        "isBorrowed": true
+    },
+    {
+        "id": 7,
+        "title": "War and Peace",
+        "author": "Leo Tolstoy",
+        "year": 1870,
+        "genre": "Historical",
+        "isBorrowed": false
+    },
+    {
+        "id": 8,
+        "title": "The Catcher in the Rye",
+        "author": "J.D. Salinger",
+        "year": 1951,
+        "genre": "Fiction",
+        "isBorrowed": true
+    },
+    {
+        "id": 9,
+        "title": "The Hobbit",
+        "author": "J.R.R. Tolkien",
+        "year": 1937,
+        "genre": "Fantasy",
+        "isBorrowed": false
+    },
+    {
+        "id": 12,
+        "title": "Crime and Punishment",
+        "author": "Fyodor Dostoevsky",
+        "year": 1866,
+        "genre": "Philosophical",
+        "isBorrowed": true
+    },
+    {
+        "id": 13,
+        "title": "The Brothers Karamazov",
+        "author": "Fyodor Dostoevsky",
+        "year": 1880,
+        "genre": "Philosophical",
+        "isBorrowed": false
+    },
+    {
+        "id": 14,
+        "title": "Jane Eyre",
+        "author": "Charlotte Bront\u0623\u00ab",
+        "year": 1847,
+        "genre": "Romance",
+        "isBorrowed": false
+    },
+    {
+        "id": 15,
+        "title": "Wuthering Heights",
+        "author": "Emily Bront\u0623\u00ab",
+        "year": 1847,
+        "genre": "Romance",
+        "isBorrowed": true
+    },
+    {
+        "id": 16,
+        "title": "The Odyssey",
+        "author": "Homer",
+        "year": "8th Century BC",
+        "genre": "Epic",
+        "isBorrowed": false
+    },
+    {
+        "id": 17,
+        "title": "The Iliad",
+        "author": "Homer",
+        "year": "8th Century BC",
+        "genre": "Epic",
+        "isBorrowed": true
+    },
+    {
+        "id": 18,
+        "title": "The Divine Comedy",
+        "author": "Dante Alighieri",
+        "year": 1320,
+        "genre": "Epic",
+        "isBorrowed": false
+    },
+    {
+        "id": 19,
+        "title": "Les Mis\u0623\u00a9rables",
+        "author": "Victor Hugo",
+        "year": 1862,
+        "genre": "Historical",
+        "isBorrowed": true
+    },
+    {
+        "id": 20,
+        "title": "Don Quixote",
+        "author": "Miguel de Cervantes",
+        "year": 1605,
+        "genre": "Adventure"
+    },
+    {
+        "id": 21,
+        "title": "Anna Karenina",
+        "author": "Leo Tolstoy",
+        "year": 1877,
+        "genre": "Romance"
+    },
+    {
+        "id": 22,
+        "title": "The Count of Monte Cristo",
+        "author": "Alexandre Dumas",
+        "year": 1844,
+        "genre": "Adventure",
+        "isBorrowed": false
+    },
+    {
+        "id": 23,
+        "title": "Ulysses",
+        "author": "James Joyce",
+        "year": 1922,
+        "genre": "Modernist",
+        "isBorrowed": true
+    },
+    {
+        "id": 24,
+        "title": "Madame Bovary",
+        "author": "Gustave Flaubert",
+        "year": 1857,
+        "genre": "Realist"
+    },
+    {
+        "id": 25,
+        "title": "The Stranger",
+        "author": "Albert Camus",
+        "year": 1942,
+        "genre": "Philosophical",
+        "isBorrowed": true
+    },
+    {
+        "id": 26,
+        "title": "Lolita",
+        "author": "Vladimir Nabokov",
+        "year": 1955,
+        "genre": "Psychological"
+    },
+    {
+        "id": 27,
+        "title": "The Old Man and the Sea",
+        "author": "Ernest Hemingway",
+        "year": 1952,
+        "genre": "Fiction",
+        "isBorrowed": true
+    },
+    {
+        "id": 28,
+        "title": "One Hundred Years of Solitude",
+        "author": "Gabriel Garc\u0623\u00ada M\u0623\u060crquez",
+        "year": 1967,
+        "genre": "Magical Realism",
+        "isBorrowed": false
+    },
+    {
+        "id": 30,
+        "title": "Heart of Darkness",
+        "author": "Joseph Conrad",
+        "year": 1899,
+        "genre": "Novella",
+        "isBorrowed": true
+    },
+    {
+        "id": 31,
+        "title": "Memorise",
+        "author": "Dystovski",
+        "year": 2000,
+        "genre": "Art",
+        "isBorrowed": false
+    },
+    {
+        "id": 32,
+        "title": "This is Book",
+        "author": "This is Author",
+        "year": 2003,
+        "genre": "Action",
+        "isBorrowed": false
+    }
+]
