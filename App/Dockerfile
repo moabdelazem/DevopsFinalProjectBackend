@@ -1,20 +1,30 @@
-# Use an official Python runtime as a parent image
-FROM python:3.10-slim
+# Stage 1: Builder Stage
+FROM python:3.10-slim AS builder
 
-# Set the working directory in the container
 WORKDIR /app
 
-# Copy the requirements file to the working directory
+# Install build dependencies if needed
+RUN apt-get update && apt-get install -y build-essential
+
+# Copy and install Python dependencies
 COPY requirements.txt .
+RUN pip install --no-cache-dir --target=/app/deps -r requirements.txt
 
-# Install any dependencies specified in requirements.txt
-RUN pip install --no-cache-dir -r requirements.txt
-
-# Copy the rest of the application code to the working directory
+# Copy the application code
 COPY . .
 
-# Expose port 8000 to the outside world
+# Stage 2: Final Stage
+FROM python:3.10-slim
+
+WORKDIR /app
+
+# Copy only the necessary files from the builder stage
+COPY --from=builder /app /app
+COPY --from=builder /app/deps /usr/local/lib/python3.10/site-packages
+
+# Expose port 8000
 EXPOSE 8000
 
 # Command to run the FastAPI server using uvicorn
 CMD ["python", "app.py"]
+
