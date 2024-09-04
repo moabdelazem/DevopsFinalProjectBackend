@@ -1,5 +1,5 @@
 # Terraform
-tf/.terraform/
+Infra/.terraform/
 
 # Python
 __pycache__/
