@@ -1,0 +1,15 @@
+# Terraform
+tf/.terraform/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pyz
+*.pyw
+*.pyi
+*.pycachefile
+*.egg-info/
+dist/
+build/
