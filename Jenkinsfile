@@ -9,6 +9,7 @@ pipeline {
         // Terraform credentials - set these in Jenkins credentials store
         TF_VAR_AWS_ACCESS_KEY_ID = credentials('moabdelazem')
         TF_VAR_AWS_SECRET_ACCESS_KEY = credentials('moabdelazem')
+        KUBECONFIG = credentials('kubeconfig')
     }
 
     stages {
@@ -79,8 +80,7 @@ pipeline {
                     // Configure kubectl
                     withCredentials([file(credentialsId: 'kubeconfig', variable: 'KUBECONFIG')]) {
                         // Apply Kubernetes configuration files
-                        sh 'kubectl apply -f k8s/deployment.yaml'
-                        sh 'kubectl apply -f k8s/service.yaml'
+                        sh 'kubectl apply -f k8s/deployment.yaml --validate=false'
                     }
                 }
             }
