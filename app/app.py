@@ -157,4 +157,4 @@ def return_book(book_id):
 CORS(app, resources={r"/api/books/borrow/*": {"origins": "http://localhost:5173"}})
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port=8000, debug=True)
