@@ -7,8 +7,8 @@ pipeline {
         DOCKER_IMAGE_NAME = 'moabdelazem/devops_fp_bend'
         DOCKER_IMAGE_TAG = 'latest'
         // Terraform credentials - set these in Jenkins credentials store
-        TF_VAR_AWS_ACCESS_KEY_ID = credentials('aws-access-key-id')
-        TF_VAR_AWS_SECRET_ACCESS_KEY = credentials('aws-secret-access-key')
+        TF_VAR_AWS_ACCESS_KEY_ID = credentials('moabdelazem')
+        TF_VAR_AWS_SECRET_ACCESS_KEY = credentials('moabdelazem')
     }
 
     stages {
