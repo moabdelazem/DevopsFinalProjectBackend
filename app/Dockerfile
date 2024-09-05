@@ -3,8 +3,11 @@ FROM python:3.10-slim AS builder
 
 WORKDIR /app
 
-# Install build dependencies if needed
-RUN apt-get update && apt-get install -y build-essential
+# Update package list
+RUN apt-get update
+
+# Install build dependencies
+RUN apt-get install -y build-essential
 
 # Copy and install Python dependencies
 COPY requirements.txt .
