@@ -41,38 +41,38 @@ pipeline {
             }
         }
 
-        //   stage('Terraform Init') {
-        //     steps {
-        //         script {
-        //             // Initialize Terraform
-        //             dir('terraform') {
-        //                 sh 'terraform init'
-        //             }
-        //         }
-        //     }
-        // }
+          stage('Terraform Init') {
+            steps {
+                script {
+                    // Initialize Terraform
+                    dir('terraform') {
+                        sh 'terraform init'
+                    }
+                }
+            }
+        }
 
-        // stage('Terraform Plan') {
-        //     steps {
-        //         script {
-        //             // Generate Terraform execution plan
-        //             dir('terraform') {
-        //                 sh 'terraform plan -out=tfplan'
-        //             }
-        //         }
-        //     }
-        // }
+        stage('Terraform Plan') {
+            steps {
+                script {
+                    // Generate Terraform execution plan
+                    dir('terraform') {
+                        sh 'terraform plan -out=tfplan'
+                    }
+                }
+            }
+        }
 
-        // stage('Terraform Apply') {
-        //     steps {
-        //         script {
-        //             // Apply Terraform changes
-        //             dir('terraform') {
-        //                 sh 'terraform apply -auto-approve tfplan'
-        //             }
-        //         }
-        //     }
-        // }
+        stage('Terraform Apply') {
+            steps {
+                script {
+                    // Apply Terraform changes
+                    dir('terraform') {
+                        sh 'terraform apply -auto-approve tfplan'
+                    }
+                }
+            }
+        }
 
             stage('Deploy to EKS') {
             steps {
