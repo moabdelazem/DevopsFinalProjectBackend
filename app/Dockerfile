@@ -6,9 +6,6 @@ WORKDIR /app
 # Update package list
 RUN apt-get update
 
-# Install build dependencies
-RUN apt-get install -y build-essential
-
 # Copy and install Python dependencies
 COPY requirements.txt .
 RUN pip install --no-cache-dir --target=/app/deps -r requirements.txt
