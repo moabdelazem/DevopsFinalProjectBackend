@@ -86,17 +86,17 @@ pipeline {
     environment {
         // Docker and AWS credentials (Assume these are stored in Jenkins credentials store)
         DOCKER_HUB_CREDENTIALS = credentials('docker-hub-credentials')
-        AWS_ACCESS_KEY_ID = credentials('aws-access-key-id')
-        AWS_SECRET_ACCESS_KEY = credentials('aws-secret-access-key')
+        // AWS_ACCESS_KEY_ID = credentials('aws-access-key-id')
+        // AWS_SECRET_ACCESS_KEY = credentials('aws-secret-access-key')
         
         // Docker Hub repository details
         DOCKER_IMAGE_NAME = 'moabdelazem/devops_fp_bend'
         DOCKER_IMAGE_TAG = 'latest'
 
-        // Terraform environment variables
-        TF_VAR_aws_access_key = "${AWS_ACCESS_KEY_ID}"
-        TF_VAR_aws_secret_key = "${AWS_SECRET_ACCESS_KEY}"
-        TF_VAR_region = 'us-east-1'
+        // // Terraform environment variables
+        // TF_VAR_aws_access_key = "${AWS_ACCESS_KEY_ID}"
+        // TF_VAR_aws_secret_key = "${AWS_SECRET_ACCESS_KEY}"
+        // TF_VAR_region = 'us-east-1'
     }
 
     stages {
@@ -127,38 +127,38 @@ pipeline {
             }
         }
 
-        stage('Terraform Init') {
-            steps {
-                // Initialize Terraform
-                dir('terraform') {
-                    sh 'terraform init'
-                }
-            }
-        }
+    //     stage('Terraform Init') {
+    //         steps {
+    //             // Initialize Terraform
+    //             dir('terraform') {
+    //                 sh 'terraform init'
+    //             }
+    //         }
+    //     }
 
-        stage('Terraform Apply') {
-            steps {
-                // Apply the Terraform configuration to build/update the infrastructure
-                dir('terraform') {
-                    sh 'terraform apply -auto-approve'
-                }
-            }
-        }
+    //     stage('Terraform Apply') {
+    //         steps {
+    //             // Apply the Terraform configuration to build/update the infrastructure
+    //             dir('terraform') {
+    //                 sh 'terraform apply -auto-approve'
+    //             }
+    //         }
+    //     }
 
-        stage('Deploy to AWS EKS') {
-            steps {
-                script {
-                    // Configure kubectl for EKS
-                    withAWS(region: "${env.TF_VAR_region}", credentials: 'aws-creds') {
-                        sh '''
-                        aws eks update-kubeconfig --name demo --region us-east-1
-                        kubectl apply -f kubernetes/deployment.yaml
-                        '''
-                    }
-                }
-            }
-        }
-    }
+    //     stage('Deploy to AWS EKS') {
+    //         steps {
+    //             script {
+    //                 // Configure kubectl for EKS
+    //                 withAWS(region: "${env.TF_VAR_region}", credentials: 'aws-creds') {
+    //                     sh '''
+    //                     aws eks update-kubeconfig --name demo --region us-east-1
+    //                     kubectl apply -f kubernetes/deployment.yaml
+    //                     '''
+    //                 }
+    //             }
+    //         }
+    //     }
+    // }
 
     post {
         success {
