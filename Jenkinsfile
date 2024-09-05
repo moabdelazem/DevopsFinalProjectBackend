@@ -72,6 +72,19 @@ pipeline {
                 }
             }
         }
+
+            stage('Deploy to EKS') {
+            steps {
+                script {
+                    // Configure kubectl
+                    withCredentials([file(credentialsId: 'kubeconfig', variable: 'KUBECONFIG')]) {
+                        // Apply Kubernetes configuration files
+                        sh 'kubectl apply -f k8s/deployment.yaml'
+                        sh 'kubectl apply -f k8s/service.yaml'
+                    }
+                }
+            }
+        }
     }
 
     post {
