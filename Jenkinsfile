@@ -36,6 +36,33 @@ pipeline {
                 }
             }
         }
+
+        stage('Terraform Init') {
+            steps {
+                script {
+                    // Initialize Terraform
+                    sh 'terraform init'
+                }
+            }
+        }
+
+        stage('Terraform Plan') {
+            steps {
+                script {
+                    // Plan Terraform
+                    sh 'terraform plan -out=tfplan'
+                }
+            }
+        }
+
+        stage('Terraform Apply') {
+            steps {
+                script {
+                    // Apply Terraform changes
+                    sh 'terraform apply -auto-approve tfplan'
+                }
+            }
+        }
     }
 
     post {
