@@ -40,11 +40,13 @@ pipeline {
             }
         }
 
-        stage('Terraform Init') {
+          stage('Terraform Init') {
             steps {
                 script {
                     // Initialize Terraform
-                    sh 'terraform init'
+                    dir('terraform') {
+                        sh 'terraform init'
+                    }
                 }
             }
         }
@@ -52,8 +54,10 @@ pipeline {
         stage('Terraform Plan') {
             steps {
                 script {
-                    // Plan Terraform
-                    sh 'terraform plan -out=tfplan'
+                    // Generate Terraform execution plan
+                    dir('terraform') {
+                        sh 'terraform plan -out=tfplan'
+                    }
                 }
             }
         }
@@ -62,7 +66,9 @@ pipeline {
             steps {
                 script {
                     // Apply Terraform changes
-                    sh 'terraform apply -auto-approve tfplan'
+                    dir('terraform') {
+                        sh 'terraform apply -auto-approve tfplan'
+                    }
                 }
             }
         }
