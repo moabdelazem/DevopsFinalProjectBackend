@@ -94,8 +94,8 @@ pipeline {
         DOCKER_IMAGE_TAG = 'latest'
 
         // Terraform environment variables
-        TF_VAR_aws_access_key = AWS_ACCESS_KEY_ID
-        TF_VAR_aws_secret_key = AWS_SECRET_ACCESS_KEY
+        TF_VAR_aws_access_key = "${AWS_ACCESS_KEY_ID}"
+        TF_VAR_aws_secret_key = "${AWS_SECRET_ACCESS_KEY}"
         TF_VAR_region = 'us-east-1'
     }
 
