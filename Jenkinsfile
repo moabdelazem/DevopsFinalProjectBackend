@@ -12,7 +12,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Checkout code from Git
-                git 'https://github.com/moabdelazem/DevopsFinalProjectBackend'
+                git 'https://github.com/moabdelazem/DevopsFinalProjectBackend', branch: 'main'
             }
         }
 
